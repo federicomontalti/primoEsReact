@@ -1,16 +1,14 @@
-/*import React from 'react';
+import React from 'react';
 import ReactDOM from 'react-dom/client';
-import App from './App';
+//import App, {MyComponent} from './App';
+import App, {CyclicRenderingComponent} from './App';
 
+//l'applicazione React verrà montata sul div root
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
-root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
-);*/
 
-export{}
-
-console.log("Ciao");
+//metodo che reinderizza il componente App in root
+root.render(<CyclicRenderingComponent />);
+root.render(<App />);
+//root.render(<MyComponent />); //usando <> usiamo il componente come tag html

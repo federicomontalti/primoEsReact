@@ -1,6 +1,6 @@
 //import styles from './App.module.scss';
 //import logo from "./assets/logo512.png";
-//import Counter from './components/counter';
+import Counter from './components/counter';
 //import CounterObjectState from './components/counterObjectState';
 //import { TextComponent } from './components/textcomponent';
 //import { MiddleComponent } from './components/middleComponent';
@@ -10,12 +10,24 @@ import { PersonInput } from './components/personInput';
 
 
 // export default function App() {
-//   const [text, setText] = useState("");
+//   //const [text, setText] = useState("");
+
+//   const[value, setValue] = useState(10);
 
 //   return <>
 //     <div>App</div>
 //     {/* <Counter /> */}
-//     {/* <Counter /> */}
+
+//     {/*
+//       Se cambio una prop qualsiasi il componente viene ridisegnato
+//       Se cambia la prop key il componente viene reinizializzato (tutti gli stati tornano al valore iniziale)
+//     */}
+//     <Counter initialValue={10}/>
+//     {/* <Counter key={value}/> */}
+
+//     <button onClick={() => setValue(20)}>imposta a 20</button>
+//     <div>value: {value}</div>
+
 //     {/* <CounterObjectState /> */}
 //     {/* <TextComponent /> */}
 //     {/*<MyCustomInput label={"Nome"} required={true} onChange={text => {  //questo text è ciò che ci passa la funzione
@@ -26,15 +38,16 @@ import { PersonInput } from './components/personInput';
 //     {/* <MyCustomInput label={"Cognome"} required={false} onChange={text => {console.log(text)}}/> */}
 //     {/* <div>Testo in App.tsx: {text}</div> */}
 
-//     <MiddleComponent onChange={text => {
+//     {/* <MiddleComponent onChange={text => {
 //       console.log(text)
 //       setText(text);
 //     }} />
-//     <div>Testo in App.tsx: {text}</div>
+//     <div>Testo in App.tsx: {text}</div> */}
 //   </>
 // };
 
 
+//___PULSANTE SALVA STAMPA NOME E COGNOME UTENTE___
 
 export default function App() {
   const [nome, setNome] = useState("");

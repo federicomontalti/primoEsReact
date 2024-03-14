@@ -35,7 +35,7 @@ let punto = {
   x:3, y:7
 }
 
-interface Point {
+export interface Point {
   x:number;
   readonly y:number;
   readonly z?:number; // ? rende la proprietà opzionale

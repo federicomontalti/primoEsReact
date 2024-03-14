@@ -1,18 +1,62 @@
-import styles from './App.module.scss';
-import logo from "./assets/logo512.png";
+//import styles from './App.module.scss';
+//import logo from "./assets/logo512.png";
+//import Counter from './components/counter';
+//import CounterObjectState from './components/counterObjectState';
+//import { TextComponent } from './components/textcomponent';
+//import { MiddleComponent } from './components/middleComponent';
+//import { MyCustomInput } from './components/myCustomInput';
+import { useState } from 'react';
+import { PersonInput } from './components/personInput';
+
+
+// export default function App() {
+//   const [text, setText] = useState("");
+
+//   return <>
+//     <div>App</div>
+//     {/* <Counter /> */}
+//     {/* <Counter /> */}
+//     {/* <CounterObjectState /> */}
+//     {/* <TextComponent /> */}
+//     {/*<MyCustomInput label={"Nome"} required={true} onChange={text => {  //questo text è ciò che ci passa la funzione
+//       //implementazione del callback
+//       console.log(text)
+//       setText(text);
+//     }}/> */}
+//     {/* <MyCustomInput label={"Cognome"} required={false} onChange={text => {console.log(text)}}/> */}
+//     {/* <div>Testo in App.tsx: {text}</div> */}
+
+//     <MiddleComponent onChange={text => {
+//       console.log(text)
+//       setText(text);
+//     }} />
+//     <div>Testo in App.tsx: {text}</div>
+//   </>
+// };
+
 
 
 export default function App() {
-  return <>
-    <CyclicRenderingComponent />
-    {/* {MyComponent} */}
-    <div className={styles.title}>
-      {/* {<img src={logo} alt="logo" />} */}
-      <div>Fitstic React 2024</div> 
-    </div>
-    <MyComponent />
-  </>;
+  const [nome, setNome] = useState("");
+  const [cognome, setCognome] = useState("");
+  const [result, setResult] = useState("");
+
+  return (
+    <>
+      <PersonInput label={"Nome"} onChange={setNome} value={nome} />
+      <PersonInput label={"Cognome"} onChange={setCognome} value={cognome} />
+      <div>
+        <button onClick={() => {
+          const newResult = `Nome: ${nome}, Cognome: ${cognome}`; 
+          setResult(newResult);
+        }}>Salva</button>
+      </div>
+      <div>{result}</div>
+    </>
+  )
 }
+
+
 
 const sum = (n1:number, n2:number) => {
   return n1+n2
@@ -65,7 +109,7 @@ export function MyComponent() {
       ? <div>bool è vero</div> 
       : <div>bool è falso</div>}
 
-    {/*Rendering condizionale con operatore AND*/}
+    {/*Rendering condizionale con operatore logico AND*/}
     {bool === true && <div>bool è vero</div>}
 
     {null}

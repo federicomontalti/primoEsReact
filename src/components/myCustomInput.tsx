@@ -15,13 +15,13 @@ export function MyCustomInput(props: { //props da fare sempre readonly
 
     return <>
         <div>
-                <div>
-                    <label>{label} {required === true && <span>* </span>}</label>
-                    <input type="text" value={text} onChange={ev => {
-                        setText(ev.target.value)
-                        onChange(ev.target.value)  //avverte la funzione in App e gli passa il valore
-                    }}/>
-                </div>
+            <div>
+                <label>{label} {required === true && <span>* </span>}</label>
+                <input type="text" value={text} onChange={ev => {
+                    setText(ev.target.value)
+                    onChange(ev.target.value)  //avverte la funzione in App e gli passa il valore
+                }}/>
+            </div>
             {text.length === 0 && required === true && <div>* Campo obbligatorio</div>}
         </div>
     </>

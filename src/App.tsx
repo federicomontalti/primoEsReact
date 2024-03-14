@@ -1,28 +1,62 @@
+import { useEffect, useMemo, useState } from 'react';
 //import styles from './App.module.scss';
 //import logo from "./assets/logo512.png";
-import Counter from './components/counter';
+//import Counter from './components/counter';
 //import CounterObjectState from './components/counterObjectState';
 //import { TextComponent } from './components/textcomponent';
 //import { MiddleComponent } from './components/middleComponent';
 //import { MyCustomInput } from './components/myCustomInput';
-import { useState } from 'react';
-import { PersonInput } from './components/personInput';
+//import { PersonInput } from './components/personInput';
+//import Interval from './components/interval';
+import { ToDoList } from './components/toDoList/toDoList';
 
+export default function App() {
+
+  return <>
+    <ToDoList />
+  </>
+}
+
+// function calcolo(n: number) {
+//   console.log("esecuzione calcolo n:", n);
+//   return n*2;
+// }
 
 // export default function App() {
-//   //const [text, setText] = useState("");
+//   const [text, setText] = useState("");
 
 //   const[value, setValue] = useState(10);
 
+//   //finchè non cambia il valore di value questo hook "useMemo" verrà invocato solo la prima volta
+//   const risultatoCalcolo = useMemo(() => {
+//     return calcolo(value);
+//   }, [value])
+
+//   /*
+//     Se nello useEffect si definisce come lista di dipendenze l'array vuoto lì,
+//     allora l'effetto viene invocato al mount del componente
+//   */
+//   useEffect(() => {
+//     console.log("useEffect evento di mount");
+//     return() => {
+//       console.log("return evento di mount");
+//     }
+//   }, []); //con le quadre vuote si avvia solo al primo avvio del componente
+
+//   console.log("render App()");
+
 //   return <>
 //     <div>App</div>
+//     {/* {value !== 20 && <Interval />} */}
+//     <div>risultato calcolo: {risultatoCalcolo}</div>
+
 //     {/* <Counter /> */}
 
 //     {/*
 //       Se cambio una prop qualsiasi il componente viene ridisegnato
 //       Se cambia la prop key il componente viene reinizializzato (tutti gli stati tornano al valore iniziale)
 //     */}
-//     <Counter initialValue={10}/>
+//     {/* <Counter initialValue={10}/> */}
 //     {/* <Counter key={value}/> */}
 
 //     <button onClick={() => setValue(20)}>imposta a 20</button>
@@ -38,36 +72,39 @@ import { PersonInput } from './components/personInput';
 //     {/* <MyCustomInput label={"Cognome"} required={false} onChange={text => {console.log(text)}}/> */}
 //     {/* <div>Testo in App.tsx: {text}</div> */}
 
-//     {/* <MiddleComponent onChange={text => {
+//     <MiddleComponent onChange={text => {
 //       console.log(text)
 //       setText(text);
 //     }} />
-//     <div>Testo in App.tsx: {text}</div> */}
+//     <div>Testo in App.tsx: {text}</div>
 //   </>
 // };
 
 
+
 //___PULSANTE SALVA STAMPA NOME E COGNOME UTENTE___
 
-export default function App() {
-  const [nome, setNome] = useState("");
-  const [cognome, setCognome] = useState("");
-  const [result, setResult] = useState("");
+// export default function App() {
+//   const [nome, setNome] = useState("");
+//   const [cognome, setCognome] = useState("");
+//   const [result, setResult] = useState("");
 
-  return (
-    <>
-      <PersonInput label={"Nome"} onChange={setNome} value={nome} />
-      <PersonInput label={"Cognome"} onChange={setCognome} value={cognome} />
-      <div>
-        <button onClick={() => {
-          const newResult = `Nome: ${nome}, Cognome: ${cognome}`; 
-          setResult(newResult);
-        }}>Salva</button>
-      </div>
-      <div>{result}</div>
-    </>
-  )
-}
+//   return (
+//     <>
+//       <PersonInput label={"Nome"} onChange={setNome} value={nome} />
+//       <PersonInput label={"Cognome"} onChange={setCognome} value={cognome} />
+//       <div>
+//         <button onClick={() => {
+//           const newResult = `Nome: ${nome}, Cognome: ${cognome}`; 
+//           setResult(newResult);
+//         }}>Salva</button>
+//       </div>
+//       <div>{result}</div>
+//     </>
+//   )
+// }
+
+
 
 const sum = (n1:number, n2:number) => {
   return n1+n2

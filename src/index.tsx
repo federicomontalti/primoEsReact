@@ -10,5 +10,5 @@ const root = ReactDOM.createRoot(
 
 //metodo che reinderizza il componente App in root
 root.render(<CyclicRenderingComponent />);
-root.render(<App />);
+root.render(<App />)
 //root.render(<MyComponent />); //usando <> usiamo il componente come tag html

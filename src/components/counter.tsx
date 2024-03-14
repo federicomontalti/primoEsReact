@@ -11,10 +11,13 @@ export default function Counter(props: {
     const [contatore, setContatore] = useState(initialValue);
     console.log("Counter()", {contatore});
 
-    // useEffect(() => {
-    //     console.log("useEffect in azione", initialValue);
-    //     setContatore(initialValue);
-    // }, [initialValue])
+    useEffect(() => {
+        console.log("useEffect in azione", initialValue);
+        setContatore(initialValue);
+        return() => {
+            console.log("return useEffect", initialValue);
+        }
+    }, [initialValue])
 
     return <>
         {/*viene ridisegnato anche Display, perchè cambia la sua prop*/}

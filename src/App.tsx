@@ -37,7 +37,6 @@ import { PersonInput } from './components/personInput';
 
 
 export default function App() {
-<<<<<<< HEAD
   const [nome, setNome] = useState("");
   const [cognome, setCognome] = useState("");
   const [result, setResult] = useState("");
@@ -57,21 +56,6 @@ export default function App() {
   )
 }
 
-
-
-=======
-  return <>
-    <CyclicRenderingComponent />
-    {/* {MyComponent} */}
-    <div className={styles.title}>
-      {/* {<img src={logo} alt="logo" />} */}
-      <div>Fitstic React 2024</div> 
-    </div>
-    <MyComponent />
-  </>;
-}
-
->>>>>>> b0c8a6f80492d8b8ddb7f155faa29eafa5c92167
 const sum = (n1:number, n2:number) => {
   return n1+n2
 }
@@ -123,11 +107,8 @@ export function MyComponent() {
       ? <div>bool è vero</div> 
       : <div>bool è falso</div>}
 
-<<<<<<< HEAD
     {/*Rendering condizionale con operatore logico AND*/}
-=======
-    {/*Rendering condizionale con operatore AND*/}
->>>>>>> b0c8a6f80492d8b8ddb7f155faa29eafa5c92167
+
     {bool === true && <div>bool è vero</div>}
 
     {null}
